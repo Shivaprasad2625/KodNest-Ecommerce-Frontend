@@ -1,0 +1,19 @@
+<!--<p *ngFor="let tempProduct of products">
+    {{tempProduct}}
+    {{tempProduct.name}}:
+    {{tempProduct.unitPrice}}
+</p> 
+
+{{data1}}-->
+
+<div class="menu-sidebar-content js-scrollbar1">
+    <nav class="navbar-sidebar">
+        <ul class="list-unstyled navbar-list">
+            <li *ngFor="let tempProductlist of products">
+                <a routerLink="/category/{{tempProductlist.currentCategoryId}}" routerLinkActive="active-link">
+                    {{tempProductlist?.sku}}
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
