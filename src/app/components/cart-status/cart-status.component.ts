@@ -15,7 +15,7 @@ export class CartStatusComponent implements OnInit{
   ngOnInit(): void {
     this.updateCartStatus();
   }
-  
+      
   updateCartStatus() {
     //subscribe to the cart totalPrice
     this.cartService.totalPrice.subscribe(

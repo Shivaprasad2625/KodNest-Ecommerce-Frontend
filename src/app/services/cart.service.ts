@@ -16,15 +16,10 @@ export class CartService {
     //check if we already have the item in out cart
     let alreadyExistsInCart: boolean = false;
     let existingCartItem : any; 
-
+   
     if (this.cartItems.length > 0) {
       //find the item in the cart based on item
-      for (let tempCartItem of this.cartItems) {
-        if (tempCartItem.id === theCartItem.id) {
-          existingCartItem = tempCartItem;
-          break;
-        }
-      }
+      existingCartItem = this.cartItems.find( tempCartItem => tempCartItem.id === theCartItem.id);
       //check if we found it
       alreadyExistsInCart = (existingCartItem !== undefined);
     }
@@ -65,7 +60,7 @@ export class CartService {
       const subTotalPrice = tempCartItem.quantity * tempCartItem.unitPrice;
       console.log(`name: ${tempCartItem.name}, quantity=${tempCartItem.quantity}, unitPrice=${tempCartItem.unitPrice}, subTotalPrice=${subTotalPrice}`);
     }
-    console.log(`totalPrice: ${totalPriceValue.toFixed(2)}, totalQuantity: ${totalQuantityValue }}`);
+    console.log(`totalPrice: ${totalPriceValue.toFixed(2)}, totalQuantity: ${totalQuantityValue }`);
     console.log('----');
 
  }

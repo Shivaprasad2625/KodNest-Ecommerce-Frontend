@@ -1,4 +1,8 @@
 export class Product {
+    // constructor() {
+    //     console.log('ExampleComponent created');
+    //   }
+
     constructor(
                 public id : string,
                 public sku: string,
@@ -8,8 +12,8 @@ export class Product {
                 public imageUrl: string,
                 public active: boolean,
                 public unitsInStock: number,
-                public dateCreated: Date,
-                public lastUpdated: Date
+                // public dateCreated: Date,
+                // public lastUpdated: Date
             ){
     }
 }
