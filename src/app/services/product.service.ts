@@ -46,7 +46,7 @@ export class ProductService {
     return this.httpClient.get<GetResponseProducts>(searchUrl).pipe(
       (response: any) => {
         return response
-      }
+      }  
       //map(response => response._embedded.products)
     );
   }

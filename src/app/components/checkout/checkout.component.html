@@ -9,7 +9,7 @@
                         <div class="col-md-2"> <label>First Name</label></div>
                         <div class="col-md-9">
                             <div class="input-space">
-                                <input formControlName="firstName" type="text">
+                                <input formControlName="firstName" type="text" required>
                             </div>
                         </div>
                     </div>
@@ -36,13 +36,22 @@
                 <!--Shipping Address-->
                 <div formGroupName="shippingAddress" class="form-area">
                     <h3>Shipping Address</h3>
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col-md-2"> <label>Country</label></div>
                         <div class="col-md-9">
                             <div class="input-space">
                                 <select formControlName="country">
                                     <option>TO DO</option>
                                 </select>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <div class="row">
+                        <div class="col-md-2"> <label>Country</label></div>
+                        <div class="col-md-9">
+                            <div class="input-space">
+                                <input formControlName="country" type="text">
                             </div>
                         </div>
                     </div>
@@ -69,12 +78,21 @@
                         <div class="col-md-2"> <label>State</label></div>
                         <div class="col-md-9">
                             <div class="input-space">
+                                <input formControlName="state" type="text">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="row">
+                        <div class="col-md-2"> <label>State</label></div>
+                        <div class="col-md-9">
+                            <div class="input-space">
                                 <select formControlName="state">
                                     <option>TO DO</option>
                                 </select>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="row">
                         <div class="col-md-2"> <label>Zip Code</label></div>
@@ -95,13 +113,22 @@
                 <!--Billing Address-->
                 <div formGroupName="billingAddress" class="form-area">
                     <h3>Billing Address</h3>
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col-md-2"> <label>Country</label></div>
                         <div class="col-md-9">
                             <div class="input-space">
                                 <select formControlName="country">
                                     <option>TO DO</option>
                                 </select>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <div class="row">
+                        <div class="col-md-2"> <label>Country</label></div>
+                        <div class="col-md-9">
+                            <div class="input-space">
+                                <input formControlName="country" type="text">
                             </div>
                         </div>
                     </div>
@@ -124,13 +151,22 @@
                         </div>
                     </div>
 
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col-md-2"> <label>State</label></div>
                         <div class="col-md-9">
                             <div class="input-space">
                                 <select formControlName="state">
                                     <option>TO DO</option>
                                 </select>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <div class="row">
+                        <div class="col-md-2"> <label>State</label></div>
+                        <div class="col-md-9">
+                            <div class="input-space">
+                                <input formControlName="state" type="text">
                             </div>
                         </div>
                     </div>
@@ -192,7 +228,9 @@
                         <div class="col-md-9">
                             <div class="input-space">
                                 <select formControlName="expirationMonth">
-                                    <option>TO DO</option>
+                                    <option *ngFor="let month of creditCardMonths">
+                                        {{ month }}
+                                    </option>
                                 </select>
                             </div>
                         </div>
@@ -202,8 +240,10 @@
                         <div class="col-md-2"> <label>Expiration Year</label></div>
                         <div class="col-md-9">
                             <div class="input-space">
-                                <select formControlName="expirationYear">
-                                    <option>TO DO</option>
+                                <select formControlName="expirationYear" (change)="handleMonthsAndYears()">
+                                    <option *ngFor="let year of creditCardYears">
+                                        {{ year }}
+                                    </option>
                                 </select>
                             </div>
                         </div>
